@@ -14,73 +14,113 @@ const num = 55;
 
 // (num === 50) ? console.log('complete!') : console.log('error!');
 
-switch(num){
-    case 50:
-        console.log('complete!')
-        break;
-    case 100:
-        console.log('error: слишком много!');
-        break;
-    default:
-        console.log('error: неизвестная ошибка.');
-        break;
-}
+// switch(num){
+//     case 50:
+//         console.log('complete!')
+//         break;
+//     case 100:
+//         console.log('error: слишком много!');
+//         break;
+//     default:
+//         console.log('error: неизвестная ошибка.');
+//         break;
+// }
 
 
-// let abcd = 10;
+// // let abcd = 10;
 
-// // while(abcd < 15){
-// //     console.log(abcd);
+// // // while(abcd < 15){
+// // //     console.log(abcd);
+// // //     abcd++;
+// // // }
+
+// // do{
+// //     console.log('abcd');
 // //     abcd++;
 // // }
+// // while(abcd < 15)
 
-// do{
-//     console.log('abcd');
-//     abcd++;
-// }
-// while(abcd < 15)
+// // for(let i = 1; i <= 5; i++){
 
-// for(let i = 1; i <= 5; i++){
+// //     if(i === 2){
+// //         // break;
+// //         continue;
+// //     }
+// //     console.log(i)
+// // }
 
-//     if(i === 2){
-//         // break;
-//         continue;
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// console.log(numberOfFilms);
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+// console.log(personalMovieDB);
+
+// for(let i = 0; i < 2; i++){
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
+
+//     if(a != null && b != null && a != '' && b != '' && a.length < 50){
+//         personalMovieDB.movies[a] = b;
+//         console.log('complete!')
+//     }else{
+//         console.log('error')
+//         i--;
 //     }
-//     console.log(i)
+
 // }
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-console.log(numberOfFilms);
+// if(personalMovieDB.count < 10){
+//     console.log('malo')
+// } else if(personalMovieDB.count < 30){
+//     console.log('normal')
+// } else if(personalMovieDB.count < 50){
+//     console.log('great!')
+// }
+let a = 10;
+console.log(a);
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+let b = 45;
+
+function showFirstMessage(text){
+    console.log(text);
+    a = 233;
+    console.log(b);
+}
+
+showFirstMessage('welcome home goodhunter');
+console.log(a);
+
+// function calc(a,b){
+//     return a + b;
+// }
+
+// console.log(calc(42,5));
+
+function ret(){
+    let num = 40;
+
+    //
+
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function(username){
+    let a = 44;
+    console.log(username + a)
 };
 
-console.log(personalMovieDB);
+logger('goodhunter');
 
-for(let i = 0; i < 2; i++){
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
+const calc = a => --a;
 
-    if(a != null && b != null && a != '' && b != '' && a.length < 50){
-        personalMovieDB.movies[a] = b;
-        console.log('complete!')
-    }else{
-        console.log('error')
-        i--;
-    }
-
-}
-
-if(personalMovieDB.count < 10){
-    console.log('malo')
-} else if(personalMovieDB.count < 30){
-    console.log('normal')
-} else if(personalMovieDB.count < 50){
-    console.log('great!')
-}
-
+console.log(calc(0));
