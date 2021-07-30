@@ -49,93 +49,131 @@ const num = 55;
 // //     console.log(i)
 // // }
 
-// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-// console.log(numberOfFilms);
+let numberOfFilms;
 
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
+
+start()
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
 // console.log(personalMovieDB);
 
-// for(let i = 0; i < 2; i++){
-//     const a = prompt('Один из последних просмотренных фильмов?', ''),
-//           b = prompt('На сколько оцените его?', '');
+function writeYourGenres(){
+    for(let i = 1; i <= 3; i++){
+        const genre = prompt(`Ваш любимый жанр номер ${i}`);
+        while(genre == '' || genre == null){
+            const genre = prompt(`Ваш любимый жанр номер ${i}`);
+        }
+        personalMovieDB.genres[i - 1] = genre;
+    }
 
-//     if(a != null && b != null && a != '' && b != '' && a.length < 50){
-//         personalMovieDB.movies[a] = b;
-//         console.log('complete!')
-//     }else{
-//         console.log('error')
-//         i--;
-//     }
 
-// }
-
-// if(personalMovieDB.count < 10){
-//     console.log('malo')
-// } else if(personalMovieDB.count < 30){
-//     console.log('normal')
-// } else if(personalMovieDB.count < 50){
-//     console.log('great!')
-// }
-let a = 10;
-console.log(a);
-
-let b = 45;
-
-function showFirstMessage(text){
-    console.log(text);
-    a = 233;
-    console.log(b);
 }
 
-showFirstMessage('welcome home goodhunter');
-console.log(a);
+writeYourGenres();
 
-// function calc(a,b){
-//     return a + b;
-// }
-
-// console.log(calc(42,5));
-
-function ret(){
-    let num = 40;
-
-    //
-
-    return num;
+function rememberMyFilms(){
+    for(let i = 0; i < 2; i++){
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '');
+    
+        if(a != null && b != null && a != '' && b != '' && a.length < 50){
+            personalMovieDB.movies[a] = b;
+            console.log('complete!')
+        }else{
+            console.log('error')
+            i--;
+        }
+    
+    }
 }
 
-const anotherNum = ret();
-console.log(anotherNum);
+function detectPersonalLvl(){
+    if(personalMovieDB.count < 10){
+        console.log('malo')
+    } else if(personalMovieDB.count < 30){
+        console.log('normal')
+    } else if(personalMovieDB.count < 50){
+        console.log('great!')
+    }
+}
 
-const logger = function(username){
-    let a = 44;
-    console.log(username + a)
-};
+function showMyDB(){
+    if(personalMovieDB.privat == false){
+        console.log(personalMovieDB)
+    }
+}
 
-logger('goodhunter');
+showMyDB();
 
-const calc = a => --a;
 
-console.log(calc(0));
 
-const str ='text';
+// let a = 10;
+// console.log(a);
 
-console.log(str.length);
-console.log(str.toUpperCase());
+// let b = 45;
 
-const fruit = 'some fruit';
-console.log(fruit.indexOf('s'));
+// function showFirstMessage(text){
+//     console.log(text);
+//     a = 233;
+//     console.log(b);
+// }
 
-const logg = 'welcome home goodhunter';
-console.log(logg.slice(5, 10));
+// showFirstMessage('welcome home goodhunter');
+// console.log(a);
 
-const numb = "15.9px";
-console.log(parseInt(numb))
+// // function calc(a,b){
+// //     return a + b;
+// // }
+
+// // console.log(calc(42,5));
+
+// function ret(){
+//     let num = 40;
+
+//     //
+
+//     return num;
+// }
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+
+// const logger = function(username){
+//     let a = 44;
+//     console.log(username + a)
+// };
+
+// logger('goodhunter');
+
+// const calc = a => --a;
+
+// console.log(calc(0));
+
+// const str ='text';
+
+// console.log(str.length);
+// console.log(str.toUpperCase());
+
+// const fruit = 'some fruit';
+// console.log(fruit.indexOf('s'));
+
+// const logg = 'welcome home goodhunter';
+// console.log(logg.slice(5, 10));
+
+// const numb = "15.9px";
+// console.log(parseInt(numb))
 
