@@ -124,3 +124,18 @@ logger('goodhunter');
 const calc = a => --a;
 
 console.log(calc(0));
+
+const str ='text';
+
+console.log(str.length);
+console.log(str.toUpperCase());
+
+const fruit = 'some fruit';
+console.log(fruit.indexOf('s'));
+
+const logg = 'welcome home goodhunter';
+console.log(logg.slice(5, 10));
+
+const numb = "15.9px";
+console.log(parseInt(numb))
+
