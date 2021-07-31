@@ -163,41 +163,62 @@ const num = 55;
 
 // console.log(calc(0));
 
-// const str ='text';
+// // const str ='text';
 
-// console.log(str.length);
-// console.log(str.toUpperCase());
+// // console.log(str.length);
+// // console.log(str.toUpperCase());
 
-// const fruit = 'some fruit';
-// console.log(fruit.indexOf('s'));
+// // const fruit = 'some fruit';
+// // console.log(fruit.indexOf('s'));
 
-// const logg = 'welcome home goodhunter';
-// console.log(logg.slice(5, 10));
+// // const logg = 'welcome home goodhunter';
+// // console.log(logg.slice(5, 10));
 
-// const numb = "15.9px";
-// console.log(parseInt(numb))
+// // const numb = "15.9px";
+// // console.log(parseInt(numb))
 
-function first(){
-    // Do something
-    setTimeout(function(){
-        console.log(1);
-    }, 500);
+// function first(){
+//     // Do something
+//     setTimeout(function(){
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second(){
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback){
+//     console.log(`Я учу ${lang}`);
+//     callback();
+// }
+
+// function done(){
+//     console.log('Я прошел этот урок.');
+// }
+
+// learnJS('JavaScript', done);
+
+const test = {
+    name: 'test',
+    width: '1080px',
+    height: '720px',
+    colors:{
+        border: 'black',
+        bg:'green'
+    }
+};
+
+console.log(test);
+
+for( let key in test){
+    if(typeof(test[key]) === Object){
+        for(let i in test[key]){
+            console.log(`Свойство ${i} имеет значение ${test[key][i]}`);
+        }
+    }
+    console.log(`Свойство ${key} имеет значение ${test[key]}`);
 }
-
-function second(){
-    console.log(2);
-}
-
-first();
-second();
-
-function learnJS(lang, callback){
-    console.log(`Я учу ${lang}`);
-    callback();
-}
-
-function done(){
-    console.log('Я прошел этот урок.');
-}
-
-learnJS('JavaScript', done);
