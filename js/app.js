@@ -235,15 +235,31 @@ const num = 55;
 
 const array = [9, 8, 7, 6, 5];
 
+array.sort(compareNumb);
+console.log(array);
+
+function compareNumb(a, b){
+    return a - b;
+}
+
+// array.forEach(function(item, i, array){
+//     console.log(`${i}: ${item} внутри массива ${array}`)
+// })
+
 // array.pop();
 // array.push(3,3)
 
 // console.log(array);
 
-for(let i = 0; i < array.length; i++){
-    console.log(array[i]);
-}
+// for(let i = 0; i < array.length; i++){
+//     console.log(array[i]);
+// }
 
-for(let value of array){
-    
-}
+// for(let value of array){
+//     console.log(value)
+// }
+
+// const str = prompt("", "");
+// const products = str.split(", ");
+// products.sort();
+// console.log(products.join('; '));
