@@ -209,16 +209,26 @@ const test = {
     colors:{
         border: 'black',
         bg:'green'
+    },
+    makeTest: function(){
+        console.log('up!')
     }
 };
 
-console.log(test);
+test.makeTest();
 
-for( let key in test){
-    if(typeof(test[key]) === Object){
-        for(let i in test[key]){
-            console.log(`Свойство ${i} имеет значение ${test[key][i]}`);
-        }
-    }
-    console.log(`Свойство ${key} имеет значение ${test[key]}`);
-}
+console.log(Object.keys(test).length);
+
+
+// for( let key in test){
+//     if(typeof(test[key]) === 'object'){
+//         for(let i in test[key]){
+//             console.log(`Свойство ${i} имеет значение ${test[key][i]}`);
+//         }
+//     }else{
+//         console.log(`Свойство ${key} имеет значение ${test[key]}`);
+//     }
+// }
+
+const {border, bg} = test.colors;
+console.log(border);
