@@ -233,14 +233,14 @@ const num = 55;
 // const {border, bg} = test.colors;
 // console.log(border);
 
-const array = [9, 8, 7, 6, 5];
+// const array = [9, 8, 7, 6, 5];
 
-array.sort(compareNumb);
-console.log(array);
+// array.sort(compareNumb);
+// console.log(array);
 
-function compareNumb(a, b){
-    return a - b;
-}
+// function compareNumb(a, b){
+//     return a - b;
+// }
 
 // array.forEach(function(item, i, array){
 //     console.log(`${i}: ${item} внутри массива ${array}`)
@@ -263,3 +263,109 @@ function compareNumb(a, b){
 // const products = str.split(", ");
 // products.sort();
 // console.log(products.join('; '));
+
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj = {
+    a: 5,
+    b: 0
+};
+
+let copy = obj; // Передача по ссылке
+
+console.log(copy);
+console.log(obj);
+
+function myCopy(mainObj){
+    let objCopy = {};
+
+    let key;
+    for(key in mainObj){
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+}
+
+const newNumbers = myCopy(numbers); // Поверхностная копия объекта
+
+newNumbers.a = 10;
+
+console.log(newNumbers);
+console.log(numbers);
+
+const add = {
+    d: 10, 
+    e: 0,
+    duble: {
+        a: 0,
+        b: 0
+    }
+}
+
+const clone = (Object.assign({}, add)); // Toje poverhnostnaya copy
+
+clone.duble.b = 299;
+
+
+// console.log(clone);
+// console.log(add)
+
+const temple = ['a', 'b', 12];
+const newTemple =   temple.slice();
+
+newTemple[1] = 'welcome home goodhunter';
+
+console.log(newTemple);
+console.log(temple);
+
+const users = ['emory', 'nepenthe', 'finist'],
+      programs = ['vscode', 'figma', 'photoshop'],
+      test = [...users, ...programs, 'UTF-8', 'JavaScript'];
+
+console.log(test);
+
+function testFunc(a, b, c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const newNumb = ['dsys',-2,3,4,5];
+
+testFunc(...newNumb);
+
+const testArray = ['a', 'b'];
+
+const newArray = [...testArray];
+
+const q = {
+    one: 1,
+    two: 2,
+    three:{
+        one: 3.1,
+        two: 3.2
+    }
+}
+
+const newObj = {...q}
+
+newObj.three.one = 3;
+
+console.log(newObj);
+console.log(q);
