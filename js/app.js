@@ -264,108 +264,134 @@ const num = 55;
 // products.sort();
 // console.log(products.join('; '));
 
-let a = 5,
-    b = a;
+// Передача по ссылке или по значению
+// Spread оператор
+// shallow copy project
 
-b = b + 5;
+// let a = 5,
+//     b = a;
 
-console.log(b);
-console.log(a);
+// b = b + 5;
 
-const obj = {
-    a: 5,
-    b: 0
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 0
+// };
+
+// let copy = obj; // Передача по ссылке
+
+// console.log(copy);
+// console.log(obj);
+
+// function myCopy(mainObj){
+//     let objCopy = {};
+
+//     let key;
+//     for(key in mainObj){
+//         objCopy[key] = mainObj[key];
+//     }
+
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// }
+
+// const newNumbers = myCopy(numbers); // Поверхностная копия объекта
+
+// newNumbers.a = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+// const add = {
+//     d: 10, 
+//     e: 0,
+//     duble: {
+//         a: 0,
+//         b: 0
+//     }
+// }
+
+// const clone = (Object.assign({}, add)); // Toje poverhnostnaya copy
+
+// clone.duble.b = 299;
+
+
+// // console.log(clone);
+// // console.log(add)
+
+// const temple = ['a', 'b', 12];
+// const newTemple =   temple.slice();
+
+// newTemple[1] = 'welcome home goodhunter';
+
+// console.log(newTemple);
+// console.log(temple);
+
+// const users = ['emory', 'nepenthe', 'finist'],
+//       programs = ['vscode', 'figma', 'photoshop'],
+//       test = [...users, ...programs, 'UTF-8', 'JavaScript'];
+
+// console.log(test);
+
+// function testFunc(a, b, c){
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const newNumb = ['dsys',-2,3,4,5];
+
+// testFunc(...newNumb);
+
+// const testArray = ['a', 'b'];
+
+// const newArray = [...testArray];
+
+// const q = {
+//     one: 1,
+//     two: 2,
+//     three:{
+//         one: 3.1,
+//         two: 3.2
+//     }
+// }
+
+// const newObj = {...q}
+
+// newObj.three.one = 3;
+
+// console.log(newObj);
+// console.log(q);
+
+// Основы ооп
+
+let str = 'some';
+let objStr = new String(str);
+
+console.dir([1,2,3]);
+
+const soldier = {
+    health: 400,
+    armor: 100
 };
 
-let copy = obj; // Передача по ссылке
+const rarog = {
+    health = 700
+};
 
-console.log(copy);
-console.log(obj);
+rarog.__proto__ = soldier; // anew
 
-function myCopy(mainObj){
-    let objCopy = {};
+Object.setPrototypeOf(rarog, soldier); // new
 
-    let key;
-    for(key in mainObj){
-        objCopy[key] = mainObj[key];
-    }
-
-    return objCopy;
-}
-
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-}
-
-const newNumbers = myCopy(numbers); // Поверхностная копия объекта
-
-newNumbers.a = 10;
-
-console.log(newNumbers);
-console.log(numbers);
-
-const add = {
-    d: 10, 
-    e: 0,
-    duble: {
-        a: 0,
-        b: 0
-    }
-}
-
-const clone = (Object.assign({}, add)); // Toje poverhnostnaya copy
-
-clone.duble.b = 299;
-
-
-// console.log(clone);
-// console.log(add)
-
-const temple = ['a', 'b', 12];
-const newTemple =   temple.slice();
-
-newTemple[1] = 'welcome home goodhunter';
-
-console.log(newTemple);
-console.log(temple);
-
-const users = ['emory', 'nepenthe', 'finist'],
-      programs = ['vscode', 'figma', 'photoshop'],
-      test = [...users, ...programs, 'UTF-8', 'JavaScript'];
-
-console.log(test);
-
-function testFunc(a, b, c){
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-
-const newNumb = ['dsys',-2,3,4,5];
-
-testFunc(...newNumb);
-
-const testArray = ['a', 'b'];
-
-const newArray = [...testArray];
-
-const q = {
-    one: 1,
-    two: 2,
-    three:{
-        one: 3.1,
-        two: 3.2
-    }
-}
-
-const newObj = {...q}
-
-newObj.three.one = 3;
-
-console.log(newObj);
-console.log(q);
+const john = Object.create(soldier); // new
