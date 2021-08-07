@@ -51,75 +51,74 @@ const num = 55;
 
 // let numberOfFilms;
 
-// function start() {
-//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// refactoring
 
-//     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//     }
-// }
-
-// start()
-
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// // console.log(personalMovieDB);
-
-// function writeYourGenres(){
-//     for(let i = 1; i <= 3; i++){
-//         const genre = prompt(`Ваш любимый жанр номер ${i}`);
-//         while(genre == '' || genre == null){
-//             const genre = prompt(`Ваш любимый жанр номер ${i}`);
-//         }
-//         personalMovieDB.genres[i - 1] = genre;
-//     }
-
-
-// }
-
-// writeYourGenres();
-
-// function rememberMyFilms(){
-//     for(let i = 0; i < 2; i++){
-//         const a = prompt('Один из последних просмотренных фильмов?', ''),
-//               b = prompt('На сколько оцените его?', '');
+const personalMovieDB = {
+    count: [],
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function () {
+        let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     
-//         if(a != null && b != null && a != '' && b != '' && a.length < 50){
-//             personalMovieDB.movies[a] = b;
-//             console.log('complete!')
-//         }else{
-//             console.log('error')
-//             i--;
-//         }
-    
-//     }
-// }
+        while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        }
+        personalMovieDB.count = numberOfFilms;
+    },
+    writeYourGenres: function (){
+        for(let i = 1; i <= 3; i++){
+            let genre = prompt(`Ваш любимый жанр номер ${i}`);
+           
+            if(genre === '' || genre === null || genre === undefined){
+                console.log('Введите корректные данные');
+                i--;
+            }else{
+                personalMovieDB.genres[i - 1] = genre;
+            }
+        }
+        personalMovieDB.genres.forEach( (item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
+    },
+    rememberMyFilms: function (){
+        for(let i = 0; i < 2; i++){
+            const a = prompt('Один из последних просмотренных фильмов?', ''),
+                  b = prompt('На сколько оцените его?', '');
+        
+            if(a != null && b != null && a != '' && b != '' && a.length < 50){
+                personalMovieDB.movies[a] = b;
+                console.log('complete!')
+            }else{
+                console.log('error')
+                i--;
+            }
 
-// function detectPersonalLvl(){
-//     if(personalMovieDB.count < 10){
-//         console.log('malo')
-//     } else if(personalMovieDB.count < 30){
-//         console.log('normal')
-//     } else if(personalMovieDB.count < 50){
-//         console.log('great!')
-//     }
-// }
-
-// function showMyDB(){
-//     if(personalMovieDB.privat == false){
-//         console.log(personalMovieDB)
-//     }
-// }
-
-// showMyDB();
-
-
+        }
+    },
+    detectPersonalLvl: function (){
+        if(personalMovieDB.count < 10){
+            console.log('malo')
+        } else if(personalMovieDB.count < 30){
+            console.log('normal')
+        } else if(personalMovieDB.count < 50){
+            console.log('great!')
+        }
+    },
+    showMyDB: function (){
+        if(personalMovieDB.privat == false){
+            console.log(personalMovieDB)
+        }
+    },
+    toggleVisibleMyDB: function(){
+        if (personalMovieDB.privat){
+            personalMovieDB.privat = false;
+        }else{
+            personalMovieDB.privat = true;
+        }
+    }
+}
 
 // let a = 10;
 // console.log(a);
@@ -387,7 +386,7 @@ const soldier = {
 };
 
 const rarog = {
-    health = 700
+    health: 700
 };
 
 rarog.__proto__ = soldier; // anew
