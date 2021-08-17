@@ -29,98 +29,98 @@ const num = 55;
 
 // // let abcd = 10;
 
-// // // while(abcd < 15){
-// // //     console.log(abcd);
+// // // // while(abcd < 15){
+// // // //     console.log(abcd);
+// // // //     abcd++;
+// // // // }
+
+// // // do{
+// // //     console.log('abcd');
 // // //     abcd++;
 // // // }
+// // // while(abcd < 15)
 
-// // do{
-// //     console.log('abcd');
-// //     abcd++;
-// // }
-// // while(abcd < 15)
+// // // for(let i = 1; i <= 5; i++){
 
-// // for(let i = 1; i <= 5; i++){
+// // //     if(i === 2){
+// // //         // break;
+// // //         continue;
+// // //     }
+// // //     console.log(i)
+// // // }
 
-// //     if(i === 2){
-// //         // break;
-// //         continue;
-// //     }
-// //     console.log(i)
-// // }
+// // let numberOfFilms;
 
-// let numberOfFilms;
+// // refactoring
 
-// refactoring
-
-const personalMovieDB = {
-    count: [],
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    start: function () {
-        let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const personalMovieDB = {
+//     count: [],
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     start: function () {
+//         let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     
-        while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        }
-        personalMovieDB.count = numberOfFilms;
-    },
-    writeYourGenres: function (){
-        for(let i = 1; i <= 3; i++){
-            let genre = prompt(`Ваш любимый жанр номер ${i}`);
+//         while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+//             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//         }
+//         personalMovieDB.count = numberOfFilms;
+//     },
+//     writeYourGenres: function (){
+//         for(let i = 1; i <= 3; i++){
+//             let genre = prompt(`Ваш любимый жанр номер ${i}`);
            
-            if(genre === '' || genre === null || genre === undefined){
-                console.log('Введите корректные данные');
-                i--;
-            }else{
-                personalMovieDB.genres[i - 1] = genre;
-            }
-        }
-        personalMovieDB.genres.forEach( (item, i) => {
-            console.log(`Любимый жанр ${i + 1} - это ${item}`);
-        });
-    },
-    rememberMyFilms: function (){
-        for(let i = 0; i < 2; i++){
-            const a = prompt('Один из последних просмотренных фильмов?', ''),
-                  b = prompt('На сколько оцените его?', '');
+//             if(genre === '' || genre === null || genre === undefined){
+//                 console.log('Введите корректные данные');
+//                 i--;
+//             }else{
+//                 personalMovieDB.genres[i - 1] = genre;
+//             }
+//         }
+//         personalMovieDB.genres.forEach( (item, i) => {
+//             console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//         });
+//     },
+//     rememberMyFilms: function (){
+//         for(let i = 0; i < 2; i++){
+//             const a = prompt('Один из последних просмотренных фильмов?', ''),
+//                   b = prompt('На сколько оцените его?', '');
         
-            if(a != null && b != null && a != '' && b != '' && a.length < 50){
-                personalMovieDB.movies[a] = b;
-                console.log('complete!')
-            }else{
-                console.log('error')
-                i--;
-            }
+//             if(a != null && b != null && a != '' && b != '' && a.length < 50){
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('complete!')
+//             }else{
+//                 console.log('error')
+//                 i--;
+//             }
 
-        }
-    },
-    detectPersonalLvl: function (){
-        if(personalMovieDB.count < 10){
-            console.log('malo')
-        } else if(personalMovieDB.count < 30){
-            console.log('normal')
-        } else if(personalMovieDB.count < 50){
-            console.log('great!')
-        }
-    },
-    showMyDB: function (){
-        if(personalMovieDB.privat == false){
-            console.log(personalMovieDB)
-        }
-    },
-    toggleVisibleMyDB: function(){
-        if (personalMovieDB.privat){
-            personalMovieDB.privat = false;
-        }else{
-            personalMovieDB.privat = true;
-        }
-    }
-}
+//         }
+//     },
+//     detectPersonalLvl: function (){
+//         if(personalMovieDB.count < 10){
+//             console.log('malo')
+//         } else if(personalMovieDB.count < 30){
+//             console.log('normal')
+//         } else if(personalMovieDB.count < 50){
+//             console.log('great!')
+//         }
+//     },
+//     showMyDB: function (){
+//         if(personalMovieDB.privat == false){
+//             console.log(personalMovieDB)
+//         }
+//     },
+//     toggleVisibleMyDB: function(){
+//         if (personalMovieDB.privat){
+//             personalMovieDB.privat = false;
+//         }else{
+//             personalMovieDB.privat = true;
+//         }
+//     }
+// }
 
-// let a = 10;
+// // let a = 10;
 // console.log(a);
 
 // let b = 45;
@@ -373,24 +373,51 @@ const personalMovieDB = {
 // console.log(newObj);
 // console.log(q);
 
-// Основы ооп
+// // Основы ооп
 
-let str = 'some';
-let objStr = new String(str);
+// let str = 'some';
+// let objStr = new String(str);
 
-console.dir([1,2,3]);
+// console.dir([1,2,3]);
 
-const soldier = {
-    health: 400,
-    armor: 100
-};
+// const soldier = {
+//     health: 400,
+//     armor: 100
+// };
 
-const rarog = {
-    health: 700
-};
+// const rarog = {
+//     health: 700
+// };
 
-rarog.__proto__ = soldier; // anew
+// rarog.__proto__ = soldier; // anew
 
-Object.setPrototypeOf(rarog, soldier); // new
+// Object.setPrototypeOf(rarog, soldier); // new
 
-const john = Object.create(soldier); // new
+// const john = Object.create(soldier); // new
+
+// let x = 5; alert(x++); // return 5
+
+// [ ] + false - null + true;
+
+// console.log([ ] + false - null + true); // NaN
+
+// let y = 1; let x = y = 2; alert(x); // 2
+
+// console.log([ ] + 1 + 2); // 12
+
+// alert("1"[0]); // 1
+
+// console.log( 2 && 1 && null && 0 && undefined); // запинается на null
+
+console.log(!!(1 && 2) == (1 && 2));
+
+alert(null || 2 && 3 || 4);
+
+const a = [1, 2, 3], b = [1, 2, 3];
+
+console.log('Infinity');
+console.log(+'Infinity');
+
+console.log("Ёжик" > "Яблоко");
+
+console.log(0 || ' ' || 2 || undefined || true || false)
