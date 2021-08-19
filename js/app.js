@@ -409,15 +409,33 @@ const num = 55;
 
 // console.log( 2 && 1 && null && 0 && undefined); // запинается на null
 
-console.log(!!(1 && 2) == (1 && 2));
+// console.log(!!(1 && 2) == (1 && 2));
 
-alert(null || 2 && 3 || 4);
+// alert(null || 2 && 3 || 4);
 
-const a = [1, 2, 3], b = [1, 2, 3];
+// const a = [1, 2, 3], b = [1, 2, 3];
 
-console.log('Infinity');
-console.log(+'Infinity');
+// console.log('Infinity'); 
+// console.log(+'Infinity');
 
-console.log("Ёжик" > "Яблоко");
+// console.log("Ёжик" > "Яблоко");
 
-console.log(0 || ' ' || 2 || undefined || true || false)
+// console.log(0 || ' ' || 2 || undefined || true || false)
+
+const box = document.getElementById('box');
+console.log(box);
+
+const btns = document.getElementsByTagName('button');
+console.log(btns);
+
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
+
+const hearts = document.querySelectorAll('.heart');
+console.log(hearts);
+hearts.forEach(item =>{
+    console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart)
