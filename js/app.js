@@ -423,20 +423,35 @@ const num = 55;
 // console.log(0 || ' ' || 2 || undefined || true || false)
 
 const box = document.getElementById('box');
-console.log(box);
+// console.log(box);
 
 const btns = document.getElementsByTagName('button');
-console.log(btns);
+// console.log(btns);
 
 const circles = document.getElementsByClassName('circle');
-console.log(circles);
+// console.log(circles);
 
 const hearts = document.querySelectorAll('.heart');
-console.log(hearts);
+// console.log(hearts);
 hearts.forEach(item =>{
-    console.log(item);
+    // console.log(item);
 });
 
 const oneHeart = document.querySelector('.heart');
-console.log(oneHeart)
+// console.log(oneHeart)
 
+console.dir(box)
+
+box.style.backgroundColor = 'pink';
+box.style.width = '500px';
+
+btns[1].style.backgroundColor = 'yellow';
+btns[0].style.borderRadius = '100%';
+
+for(let i = 0; i < circles.length; i++){
+    circles[i].style.backgroundColor = 'brown';
+}
+
+hearts.forEach(item =>{
+    item.style.backgroundColor = 'black';
+});
