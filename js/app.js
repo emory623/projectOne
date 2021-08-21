@@ -431,14 +431,20 @@ const btns = document.getElementsByTagName('button');
 const circles = document.getElementsByClassName('circle');
 // console.log(circles);
 
-const hearts = document.querySelectorAll('.heart');
+
+
+
+
+const wrapper = document.querySelector('.wrapper');
+
+const oneHeart = wrapper.querySelector('.heart');
+// console.log(oneHeart)
+
+const hearts = wrapper.querySelectorAll('.heart');
 // console.log(hearts);
 hearts.forEach(item =>{
     // console.log(item);
 });
-
-const oneHeart = document.querySelector('.heart');
-// console.log(oneHeart)
 
 console.dir(box)
 
@@ -453,5 +459,29 @@ for(let i = 0; i < circles.length; i++){
 }
 
 hearts.forEach(item =>{
-    item.style.backgroundColor = 'black';
+    item.style.cssText = 'background-color: #3CAA3C; border-radius: 50%';
 });
+
+const div = document.createElement('div');
+
+div.classList.add('black');
+
+// wrapper.prepend(div);
+hearts[0].after(div);
+// wrapper.insertBefore(div, hearts[1]) // устарел
+// wrapper.appendChild(div); // устарел
+
+circles[1].remove();
+// wrapper.removeChild(hearts[1]); // устарел
+
+hearts[1].replaceWith(circles[0]);
+// wrapper.replaceChild(div, hearts[2]); // устарел
+
+div.innerHTML = "<h3>welcome home</h3>" // любая хтмл структура
+
+div.textContent = 'also sprach' // только тхт
+
+div.insertAdjacentHTML("afterend", '<h1>Zarathustra</h1>')
+
+
+
