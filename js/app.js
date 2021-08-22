@@ -420,68 +420,82 @@ const num = 55;
 
 // console.log("Ёжик" > "Яблоко");
 
-// console.log(0 || ' ' || 2 || undefined || true || false)
+// // console.log(0 || ' ' || 2 || undefined || true || false)
 
-const box = document.getElementById('box');
-// console.log(box);
+// const box = document.getElementById('box');
+// // console.log(box);
 
-const btns = document.getElementsByTagName('button');
-// console.log(btns);
+// const btns = document.getElementsByTagName('button');
+// // console.log(btns);
 
-const circles = document.getElementsByClassName('circle');
-// console.log(circles);
-
-
+// const circles = document.getElementsByClassName('circle');
+// // console.log(circles);
 
 
 
-const wrapper = document.querySelector('.wrapper');
-
-const oneHeart = wrapper.querySelector('.heart');
-// console.log(oneHeart)
-
-const hearts = wrapper.querySelectorAll('.heart');
-// console.log(hearts);
-hearts.forEach(item =>{
-    // console.log(item);
-});
-
-console.dir(box)
-
-box.style.backgroundColor = 'pink';
-box.style.width = '500px';
-
-btns[1].style.backgroundColor = 'yellow';
-btns[0].style.borderRadius = '100%';
-
-for(let i = 0; i < circles.length; i++){
-    circles[i].style.backgroundColor = 'brown';
-}
-
-hearts.forEach(item =>{
-    item.style.cssText = 'background-color: #3CAA3C; border-radius: 50%';
-});
-
-const div = document.createElement('div');
-
-div.classList.add('black');
-
-// wrapper.prepend(div);
-hearts[0].after(div);
-// wrapper.insertBefore(div, hearts[1]) // устарел
-// wrapper.appendChild(div); // устарел
-
-circles[1].remove();
-// wrapper.removeChild(hearts[1]); // устарел
-
-hearts[1].replaceWith(circles[0]);
-// wrapper.replaceChild(div, hearts[2]); // устарел
-
-div.innerHTML = "<h3>welcome home</h3>" // любая хтмл структура
-
-div.textContent = 'also sprach' // только тхт
-
-div.insertAdjacentHTML("afterend", '<h1>Zarathustra</h1>')
 
 
+// const wrapper = document.querySelector('.wrapper');
 
+// const oneHeart = wrapper.querySelector('.heart');
+// // console.log(oneHeart)
+
+// const hearts = wrapper.querySelectorAll('.heart');
+// // console.log(hearts);
+// hearts.forEach(item =>{
+//     // console.log(item);
+// });
+
+// console.dir(box)
+
+// box.style.backgroundColor = 'pink';
+// box.style.width = '500px';
+
+// btns[1].style.backgroundColor = 'yellow';
+// btns[0].style.borderRadius = '100%';
+
+// for(let i = 0; i < circles.length; i++){
+//     circles[i].style.backgroundColor = 'brown';
+// }
+
+// hearts.forEach(item =>{
+//     item.style.cssText = 'background-color: #3CAA3C; border-radius: 50%';
+// });
+
+// const div = document.createElement('div');
+
+// div.classList.add('black');
+
+// // wrapper.prepend(div);
+// hearts[0].after(div);
+// // wrapper.insertBefore(div, hearts[1]) // устарел
+// // wrapper.appendChild(div); // устарел
+
+// circles[1].remove();
+// // wrapper.removeChild(hearts[1]); // устарел
+
+// hearts[1].replaceWith(circles[0]);
+// // wrapper.replaceChild(div, hearts[2]); // устарел
+
+// div.innerHTML = "<h3>welcome home</h3>" // любая хтмл структура
+
+// div.textContent = 'also sprach' // только тхт
+
+// div.insertAdjacentHTML("afterend", '<h1>Zarathustra</h1>')
+
+
+const mainPromo = document.getElementsByClassName('promo')
+const promo = document.querySelector('.promo__adv');
+const promoGenre = document.querySelector('.promo__genre')
+// const promoImg = promo.getElementsByTagName('img');
+
+
+// for(let i = 0; i < 3; i++){
+//     promoImg[i].remove();
+// }
+
+const promoGenre2 = document.createElement('div');
+promoGenre2.className('.promo__genre');
+promoGenre2.textContent = 'ДРАМА';
+
+promoGenre.replaceWith(promoGenre2)
