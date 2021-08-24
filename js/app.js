@@ -484,18 +484,44 @@ const num = 55;
 // div.insertAdjacentHTML("afterend", '<h1>Zarathustra</h1>')
 
 
-const mainPromo = document.getElementsByClassName('promo')
-const promo = document.querySelector('.promo__adv');
-const promoGenre = document.querySelector('.promo__genre')
-// const promoImg = promo.getElementsByTagName('img');
+const movieDB = {
+    movies: [
+        "Легенда",
+        "Бронсон",
+        "Седьмая Печать",
+        "Симеон Столпник",
+        "Одержимость",
+        "Рокко и его братья"
+    ]
+}
 
+const adv = document.querySelectorAll('.promo__adv img'),
+    poster = document.querySelector('.promo__bg'),
+    genre = poster.querySelector('.promo__genre'),
+    movieList = document.querySelector('.promo__interactive-list');
 
-// for(let i = 0; i < 3; i++){
-//     promoImg[i].remove();
-// }
+adv.forEach( item =>{
+    item.remove();
+})
 
-const promoGenre2 = document.createElement('div');
-promoGenre2.className('.promo__genre');
-promoGenre2.textContent = 'ДРАМА';
+// const div = document.createElement('div');
+// div.innerHTML = "<h3>ДРАМА</h3>";
+// div.classList.add('promo__genre');
 
-promoGenre.replaceWith(promoGenre2)
+// genre.replaceWith(div);
+
+genre.textContent = 'драма';
+
+// console.log(poster);
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+
+movieList.innerHTML = "";
+
+movieDB.movies.sort();
+movieDB.movies.forEach( (film, i) => {
+    movieList.innerHTML += `
+    <li class="promo__interactive-item"> ${++i + '. ' + film} 
+        <div class="delete"></div>
+    </li>
+    `
+});
