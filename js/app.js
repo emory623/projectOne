@@ -527,7 +527,8 @@ movieDB.movies.forEach( (film, i) => {
 });
 
 const btn = document.querySelector('#btn'),
-    overlay = document.querySelector('.overlay')
+    overlay = document.querySelector('.overlay'),
+    links = document.querySelectorAll('a');
 
 // btn.onclick = function() {
 //     alert('click')
@@ -553,3 +554,16 @@ const printEvent = (e) =>{
 btn.addEventListener('click', printEvent);
 overlay.addEventListener('click', printEvent);
 
+// link.addEventListener('click', function(e){
+//     e.preventDefault();
+
+//     console.log(e.target);
+// })
+
+links.forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+    
+        console.log(e.target);
+    }, {once: true})
+})
