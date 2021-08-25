@@ -525,3 +525,31 @@ movieDB.movies.forEach( (film, i) => {
     </li>
     `
 });
+
+const btn = document.querySelector('#btn'),
+    overlay = document.querySelector('.overlay')
+
+// btn.onclick = function() {
+//     alert('click')
+// };
+
+
+
+// btn.addEventListener('click', (e) =>{
+//     e.target.remove()
+// });
+
+let i = 0;
+
+const printEvent = (e) =>{
+    console.log(e.currentTarget);
+    console.log(e.type);
+    // i++;
+    // if(i == 2){
+    //     btn.removeEventListener('click', printEvent);
+    // }
+};
+
+btn.addEventListener('click', printEvent);
+overlay.addEventListener('click', printEvent);
+
