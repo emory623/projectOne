@@ -484,89 +484,89 @@ const num = 55;
 // div.insertAdjacentHTML("afterend", '<h1>Zarathustra</h1>')
 
 
-const movieDB = {
-    movies: [
-        "Легенда",
-        "Бронсон",
-        "Седьмая Печать",
-        "Симеон Столпник",
-        "Одержимость",
-        "Рокко и его братья"
-    ]
-}
+// const movieDB = {
+//     movies: [
+//         "Легенда",
+//         "Бронсон",
+//         "Седьмая Печать",
+//         "Симеон Столпник",
+//         "Одержимость",
+//         "Рокко и его братья"
+//     ]
+// }
 
-const adv = document.querySelectorAll('.promo__adv img'),
-    poster = document.querySelector('.promo__bg'),
-    genre = poster.querySelector('.promo__genre'),
-    movieList = document.querySelector('.promo__interactive-list');
+// const adv = document.querySelectorAll('.promo__adv img'),
+//     poster = document.querySelector('.promo__bg'),
+//     genre = poster.querySelector('.promo__genre'),
+//     movieList = document.querySelector('.promo__interactive-list');
 
-adv.forEach( item =>{
-    item.remove();
-})
+// // adv.forEach( item =>{
+// //     item.remove();
+// // })
 
-// const div = document.createElement('div');
-// div.innerHTML = "<h3>ДРАМА</h3>";
-// div.classList.add('promo__genre');
+// // const div = document.createElement('div');
+// // div.innerHTML = "<h3>ДРАМА</h3>";
+// // div.classList.add('promo__genre');
 
-// genre.replaceWith(div);
+// // genre.replaceWith(div);
 
-genre.textContent = 'драма';
+// genre.textContent = 'драма';
 
-// console.log(poster);
-poster.style.backgroundImage = 'url("img/bg.jpg")';
+// // console.log(poster);
+// poster.style.backgroundImage = 'url("img/bg.jpg")';
 
-movieList.innerHTML = "";
+// movieList.innerHTML = "";
 
-movieDB.movies.sort();
-movieDB.movies.forEach( (film, i) => {
-    movieList.innerHTML += `
-    <li class="promo__interactive-item"> ${++i + '. ' + film} 
-        <div class="delete"></div>
-    </li>
-    `
-});
+// // movieDB.movies.sort();
+// // movieDB.movies.forEach( (film, i) => {
+// //     movieList.innerHTML += `
+// //     <li class="promo__interactive-item"> ${++i + '. ' + film} 
+// //         <div class="delete"></div>
+// //     </li>
+// //     `
+// // });
 
-const btn = document.querySelector('#btn'),
-    overlay = document.querySelector('.overlay'),
-    links = document.querySelectorAll('a');
+// // const btn = document.querySelector('#btn'),
+// //     overlay = document.querySelector('.overlay'),
+// //     links = document.querySelectorAll('a');
 
-// btn.onclick = function() {
-//     alert('click')
+// // btn.onclick = function() {
+// //     alert('click')
+// // };
+
+
+
+// // btn.addEventListener('click', (e) =>{
+// //     e.target.remove()
+// // });
+
+// let i = 0;
+
+// const printEvent = (e) =>{
+//     console.log(e.currentTarget);
+//     console.log(e.type);
+//     // i++;
+//     // if(i == 2){
+//     //     btn.removeEventListener('click', printEvent);
+//     // }
 // };
 
+// btn.addEventListener('click', printEvent);
+// overlay.addEventListener('click', printEvent);
 
+// // link.addEventListener('click', function(e){
+// //     e.preventDefault();
 
-// btn.addEventListener('click', (e) =>{
-//     e.target.remove()
-// });
+// //     console.log(e.target);
+// // })
 
-let i = 0;
-
-const printEvent = (e) =>{
-    console.log(e.currentTarget);
-    console.log(e.type);
-    // i++;
-    // if(i == 2){
-    //     btn.removeEventListener('click', printEvent);
-    // }
-};
-
-btn.addEventListener('click', printEvent);
-overlay.addEventListener('click', printEvent);
-
-// link.addEventListener('click', function(e){
-//     e.preventDefault();
-
-//     console.log(e.target);
-// })
-
-links.forEach(link => {
-    link.addEventListener('click', function(e){
-        e.preventDefault();
+// links.forEach(link => {
+//     link.addEventListener('click', function(e){
+//         e.preventDefault();
     
-        console.log(e.target);
-    }, {once: true})
-})
+//         console.log(e.target);
+//     }, {once: true})
+// })
 
 // console.log(document.body);
 // console.log(document.head);
@@ -577,15 +577,69 @@ links.forEach(link => {
 
 // console.log(document.body.lastChild);
 
-// console.log(document.querySelector('.add').parentNode);
-console.log(document.querySelector('.add').parentElement);
+// // console.log(document.querySelector('.add').parentNode);
+// console.log(document.querySelector('.add').parentElement);
 
-// console.log(document.querySelector('[data-current="3"]').nextElementSibling)
+// // console.log(document.querySelector('[data-current="3"]').nextElementSibling)
 
-for(let node of document.body.childNodes){
-    if(node.nodeName =='#text'){
-        continue;
-    }
+// for(let node of document.body.childNodes){
+//     if(node.nodeName =='#text'){
+//         continue;
+//     }
     
-    console.log(node)
-}
+//     console.log(node)
+// }
+
+// trainHard
+
+document.addEventListener('DOMContentLoaded', () =>{
+    const movieDB = {
+            movies: [
+                "Легенда",
+                "Бронсон",
+                "Седьмая Печать",
+                "Симеон Столпник",
+                "Одержимость",
+                "Рокко и его братья"
+            ]
+        }
+        
+        const adv = document.querySelectorAll('.promo__adv img'),
+            poster = document.querySelector('.promo__bg'),
+            genre = poster.querySelector('.promo__genre'),
+            movieList = document.querySelector('.promo__interactive-list');
+        
+        adv.forEach( item =>{
+            item.remove();
+        })
+        
+        const div = document.createElement('div');
+        div.innerHTML = "<h3>ДРАМА</h3>";
+        div.classList.add('promo__genre');
+        
+        genre.replaceWith(div);
+        
+        genre.textContent = 'драма';
+        
+        console.log(poster);
+        poster.style.backgroundImage = 'url("img/bg.jpg")';
+        
+        movieList.innerHTML = "";
+        
+        movieDB.movies.sort();
+        movieDB.movies.forEach( (film, i) => {
+            movieList.innerHTML += `
+            <li class="promo__interactive-item"> ${++i + '. ' + film} 
+                <div class="delete"></div>
+            </li>
+            `
+        });
+        
+        const btn = document.querySelector('#btn'),
+            overlay = document.querySelector('.overlay'),
+            links = document.querySelectorAll('a');
+        
+        btn.onclick = function() {
+            alert('click')
+        };        
+});
