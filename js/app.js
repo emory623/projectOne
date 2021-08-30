@@ -618,6 +618,22 @@ document.addEventListener('DOMContentLoaded', () =>{
             const newFilm = addInput.nodeValue;
             const favorite  = checkbox;
 
+            movieDB.movies.push(newFilm);
+            movieDB.movies.sort();
+
+            
+
+            function createMovieList() {
+                movieDB.movies.forEach( (film, i) => {
+                    movieList.innerHTML = "";
+
+                    movieList.innerHTML += `
+                    <li class="promo__interactive-item"> ${++i + '. ' + film} 
+                        <div class="delete"></div>
+                    </li>
+                    `
+                });
+            }
         });
         
         adv.forEach( item =>{
