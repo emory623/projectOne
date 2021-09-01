@@ -623,17 +623,19 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             
 
-            function createMovieList() {
-                movieDB.movies.forEach( (film, i) => {
-                    movieList.innerHTML = "";
+            function createMovieList(films, parent) {
+                parent.innerHTML = "";
 
-                    movieList.innerHTML += `
+                films.forEach( (film, i) => {
+                    parent.innerHTML += `
                     <li class="promo__interactive-item"> ${++i + '. ' + film} 
                         <div class="delete"></div>
                     </li>
                     `
                 });
             }
+
+            createMovieList(movieDB.movies, movieList);
         });
         
         adv.forEach( item =>{
@@ -652,15 +654,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         poster.style.backgroundImage = 'url("img/bg.jpg")';
         
         movieList.innerHTML = "";
-        
-        movieDB.movies.sort();
-        movieDB.movies.forEach( (film, i) => {
-            movieList.innerHTML += `
-            <li class="promo__interactive-item"> ${++i + '. ' + film} 
-                <div class="delete"></div>
-            </li>
-            `
-        });
+    
         
         const btn = document.querySelector('#btn'),
             overlay = document.querySelector('.overlay'),
@@ -670,3 +664,4 @@ document.addEventListener('DOMContentLoaded', () =>{
             alert('click')
         };        
 });
+
