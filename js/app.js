@@ -2,7 +2,7 @@
 
 
 
-const num = 55;
+// const num = 55;
 
 // if (num < 50){
 //     console.log('error: мало')
@@ -566,145 +566,158 @@ const num = 55;
     
 //         console.log(e.target);
 //     }, {once: true})
-// })
+// // })
 
-// console.log(document.body);
-// console.log(document.head);
-// console.log(document.documentElement);
-// console.log(document.body.childNodes);
-// console.log(document.body.firstChild);
-// console.log(document.body.firstElementChild);
+// // console.log(document.body);
+// // console.log(document.head);
+// // console.log(document.documentElement);
+// // console.log(document.body.childNodes);
+// // console.log(document.body.firstChild);
+// // console.log(document.body.firstElementChild);
 
-// console.log(document.body.lastChild);
+// // console.log(document.body.lastChild);
 
-// // console.log(document.querySelector('.add').parentNode);
-// console.log(document.querySelector('.add').parentElement);
+// // // console.log(document.querySelector('.add').parentNode);
+// // console.log(document.querySelector('.add').parentElement);
 
-// // console.log(document.querySelector('[data-current="3"]').nextElementSibling)
+// // // console.log(document.querySelector('[data-current="3"]').nextElementSibling)
 
-// for(let node of document.body.childNodes){
-//     if(node.nodeName =='#text'){
-//         continue;
+// // for(let node of document.body.childNodes){
+// //     if(node.nodeName =='#text'){
+// //         continue;
+// //     }
+    
+// //     console.log(node)
+// // }
+
+// // trainHard
+
+// document.addEventListener('DOMContentLoaded', () =>{    
+
+//     const movieDB = {
+//             movies: [
+//                 "Легенда",
+//                 "Бронсон",
+//                 "Седьмая Печать",
+//                 "Симеон Столпник",
+//                 "Одержимость",
+//                 "Рокко и его братья"
+//             ]
+//         }
+//         const adv = document.querySelectorAll('.promo__adv img'),
+//         poster = document.querySelector('.promo__bg'),
+//         genre = poster.querySelector('.promo__genre'),
+//         movieList = document.querySelector('.promo__interactive-list'),
+//         addForm = document.querySelector('form.add'),
+//         addInput = addForm.querySelector('.adding__input'),
+//         checkbox = addForm.querySelector('[type="checkbox"]');
+
+//     addForm.addEventListener('submit', (event) => {
+//         event.preventDefault();
+
+//         let newFilm = addInput.value;
+//         const favorite = checkbox.checked;
+
+//         if (newFilm) {
+
+//             if (newFilm.length > 21) {
+//                 newFilm = `${newFilm.substring(0, 22)}...`;
+//             }
+
+//             if (favorite) {
+//                 console.log("Добавляем любимый фильм");
+//             }
+
+//             movieDB.movies.push(newFilm);
+//             sortArr(movieDB.movies);
+    
+//             createMovieList(movieDB.movies, movieList);
+//         }
+
+//         event.target.reset();
+
+//     });
+
+//     const deleteAdv = (arr) => {
+//         arr.forEach(item => {
+//             item.remove();
+//         });
+//     };
+
+//     const makeChanges = () => {
+//         genre.textContent = 'драма';
+
+//         poster.style.backgroundImage = 'url("img/bg.jpg")';
+//     };
+
+//     const sortArr = (arr) => {
+//         arr.sort();
+//     };
+
+//     function createMovieList(films, parent) {
+//         parent.innerHTML = "";
+//         sortArr(films);
+    
+//         films.forEach((film, i) => {
+//             parent.innerHTML += `
+//                 <li class="promo__interactive-item">${i + 1} ${film}
+//                     <div class="delete"></div>
+//                 </li>
+//             `;
+//         });
+
+//         document.querySelectorAll('.delete').forEach((btn, i) => {
+//             btn.addEventListener('click', () => {
+//                 btn.parentElement.remove();
+//                 movieDB.movies.splice(i, 1);
+
+//                 createMovieList(films, parent);
+//             });
+//         });
 //     }
-    
-//     console.log(node)
-// }
 
-// trainHard
+//     deleteAdv(adv);
+//     makeChanges();
+//     createMovieList(movieDB.movies, movieList);
 
-document.addEventListener('DOMContentLoaded', () =>{    
+// });
 
-    const movieDB = {
-            movies: [
-                "Легенда",
-                "Бронсон",
-                "Седьмая Печать",
-                "Симеон Столпник",
-                "Одержимость",
-                "Рокко и его братья"
-            ]
-        }
-        const adv = document.querySelectorAll('.promo__adv img'),
-        poster = document.querySelector('.promo__bg'),
-        genre = poster.querySelector('.promo__genre'),
-        movieList = document.querySelector('.promo__interactive-list'),
-        addForm = document.querySelector('form.add'),
-        addInput = addForm.querySelector('.adding__input'),
-        checkbox = addForm.querySelector('[type="checkbox"]');
+// // touchstart
+// // touchend
+// // touchmove
+// // touchcancel
+// // touchenter
+// // touchleave
 
-    addForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+// window.addEventListener('DOMContentLoaded', () => {
+//     const box = document.querySelector('.box');
 
-        let newFilm = addInput.value;
-        const favorite = checkbox.checked;
+//     box.addEventListener('touchstart', (e) =>{
+//         e.preventDefault();
 
-        if (newFilm) {
+//         console.log('start')
+//     });
+//     box.addEventListener('touchmove', (e) =>{
+//         e.preventDefault();
 
-            if (newFilm.length > 21) {
-                newFilm = `${newFilm.substring(0, 22)}...`;
-            }
+//         console.log('move')
+//     });
+//     box.addEventListener('touchend', (e) =>{
+//         e.preventDefault();
 
-            if (favorite) {
-                console.log("Добавляем любимый фильм");
-            }
+//         console.log('end')
+//     });
+// });
 
-            movieDB.movies.push(newFilm);
-            sortArr(movieDB.movies);
-    
-            createMovieList(movieDB.movies, movieList);
-        }
+const li = document.querySelectorAll('li');
+console.log(li);
 
-        event.target.reset();
+function loadScript(src){
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.body.append(script);
+};
 
-    });
-
-    const deleteAdv = (arr) => {
-        arr.forEach(item => {
-            item.remove();
-        });
-    };
-
-    const makeChanges = () => {
-        genre.textContent = 'драма';
-
-        poster.style.backgroundImage = 'url("img/bg.jpg")';
-    };
-
-    const sortArr = (arr) => {
-        arr.sort();
-    };
-
-    function createMovieList(films, parent) {
-        parent.innerHTML = "";
-        sortArr(films);
-    
-        films.forEach((film, i) => {
-            parent.innerHTML += `
-                <li class="promo__interactive-item">${i + 1} ${film}
-                    <div class="delete"></div>
-                </li>
-            `;
-        });
-
-        document.querySelectorAll('.delete').forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                btn.parentElement.remove();
-                movieDB.movies.splice(i, 1);
-
-                createMovieList(films, parent);
-            });
-        });
-    }
-
-    deleteAdv(adv);
-    makeChanges();
-    createMovieList(movieDB.movies, movieList);
-
-});
-
-// touchstart
-// touchend
-// touchmove
-// touchcancel
-// touchenter
-// touchleave
-
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
-
-    box.addEventListener('touchstart', (e) =>{
-        e.preventDefault();
-
-        console.log('start')
-    });
-    box.addEventListener('touchmove', (e) =>{
-        e.preventDefault();
-
-        console.log('move')
-    });
-    box.addEventListener('touchend', (e) =>{
-        e.preventDefault();
-
-        console.log('end')
-    });
-});
+loadScript("js/test.js")
+loadScript("js/menu.js")
