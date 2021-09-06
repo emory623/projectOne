@@ -707,17 +707,17 @@
 
 //         console.log('end')
 //     });
-// });
+// // });
 
-const li = document.querySelectorAll('li');
-console.log(li);
+// const li = document.querySelectorAll('li');
+// console.log(li);
 
-function loadScript(src){
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = true;
-    document.body.append(script);
-};
+// function loadScript(src){
+//     const script = document.createElement('script');
+//     script.src = src;
+//     script.async = true;
+//     document.body.append(script);
+// };
 
-loadScript("js/test.js")
-loadScript("js/menu.js")
+// loadScript("js/test.js")
+// loadScript("js/menu.js")
